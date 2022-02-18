@@ -2,7 +2,7 @@ const req = require("express/lib/request");
 const res = require("express/lib/response");
 const usersModel =require("../models/usersModels");
 
-const addUser =(req,res) => {
+const addUser = async(req,res) => {
   try{
       await usersModel.create(req.body);
       res.status(200).json({success:true, message : "New user is added successfully"});
